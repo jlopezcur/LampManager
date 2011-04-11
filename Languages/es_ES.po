@@ -1,0 +1,16 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2011-04-09 22:44:49+0200\n"
+"PO-Revision-Date: 2011-04-09 22:44:49+0200\n"
+"Last-Translator: jlopez\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: MonoDevelop Gettext addin\n"
+
+#: ../LampManager/gtk-gui/MainWindow.cs:10
+msgid "MainWindow"
+msgstr ""
+

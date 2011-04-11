@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF3DACCC-6D80-4AE8-BC69-31A7E17EBCD2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LampManager</RootNamespace>
+    <AssemblyName>LampManager</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="gtk-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="atk-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gconf-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="HollyLibrary, Version=1.0.3209.34427, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HollyLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\..\..\..\home\jlopez\Escritorio\apache_icon_16x16.png" />
+    <EmbeddedResource Include="..\..\..\..\..\..\home\jlopez\Escritorio\tray.png" />
+    <EmbeddedResource Include="..\..\..\..\..\..\home\jlopez\Escritorio\lamp-manager-splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="gtk-gui\LampManager.ApachePanel.cs" />
+    <Compile Include="gtk-gui\LampManager.ApacheSitesList.cs" />
+    <Compile Include="gtk-gui\LampManager.ApacheModsList.cs" />
+    <Compile Include="Apache\ApacheMod.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Apache\ApacheSite.cs" />
+    <Compile Include="Apache\ApachePanel.cs" />
+    <Compile Include="Apache\ApacheModsList.cs" />
+    <Compile Include="Apache\ApacheSitesList.cs" />
+    <Compile Include="Apache\ApacheCommands.cs" />
+    <Compile Include="Apache\ApacheStatusPanel.cs" />
+    <Compile Include="gtk-gui\LampManager.ApacheStatusPanel.cs" />
+    <Compile Include="Settings\SettingsPanel.cs" />
+    <Compile Include="gtk-gui\LampManager.SettingsPanel.cs" />
+    <Compile Include="PHP\PHPCommands.cs" />
+    <Compile Include="PHP\PHPPanel.cs" />
+    <Compile Include="gtk-gui\LampManager.PHPPanel.cs" />
+    <Compile Include="AboutDialog.cs" />
+    <Compile Include="gtk-gui\LampManager.AboutDialog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.desktop" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\JLWidgets\JLWidgets.csproj">
+      <Project>{FA6057BB-5A31-45E1-A99A-DB922216F9A4}</Project>
+      <Name>JLWidgets</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Apache\" />
+    <Folder Include="Settings\" />
+    <Folder Include="PHP\" />
+    <Folder Include="MySQL\" />
+  </ItemGroup>
+</Project>
